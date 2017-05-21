@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 /**
  * Created by dell on 3/17/2017.
+ * Student adapter and its methods
+ * getCount() -> will return the size of array
+ * getItem()-> will return the position
+ * getView() -> will set the name and phone number in the list
  */
 public class StudentAdapter extends BaseAdapter {
 

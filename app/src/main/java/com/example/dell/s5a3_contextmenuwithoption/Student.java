@@ -2,6 +2,7 @@ package com.example.dell.s5a3_contextmenuwithoption;
 
 /**
  * Created by dell on 3/17/2017.
+ * Student class to get the data of the name and phone number and return it to set()
  */
 public class Student {
 

@@ -10,6 +10,13 @@ import android.view.ContextMenu;
 import android.view.MenuInflater;
 import java.util.ArrayList;
 
+
+/**
+ *      Implemented context menu having two options: call and SMS.
+ *      For this, I have taken a custom list having two text views in a row.
+ *      One text view for name and another one for phone number.
+ *      Written implicit intent action for call and SMS.
+ */
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     String Phone;
@@ -20,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     ArrayList<Student> mArrayList;
     StudentAdapter mStudentAdapter;
 
+    //created listView using arraylist
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +45,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mArrayList.add(new Student("Mina", "9456987987"));
         mArrayList.add(new Student("Krina", "9778986532"));
 
+        //taken student adapter and set it to list
         mStudentAdapter = new StudentAdapter(this, mArrayList);
         lv.setAdapter((ListAdapter) mStudentAdapter);
         lv.setOnItemClickListener(this);
 
+        //register the context menu with listview
         registerForContextMenu(lv);
     }
 
+    //inflate the menu that is call and sms
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 
